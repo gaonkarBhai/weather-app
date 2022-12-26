@@ -1,9 +1,7 @@
 let place = document.getElementById("place")
 let search = document.querySelector(".fa-magnifying-glass")
 
-let getPopUp = () => {
-    
-}
+// INSERTING THE DATA
 let insertData = (data) => {
     document.getElementById("address").innerText = data.address
     document.getElementById("celcius").innerText = Math.round(((data.currentConditions.temp)-32)* .5556)
@@ -39,7 +37,7 @@ let insertData = (data) => {
     document.querySelector('.condition').innerHTML = `Condation : ${data.currentConditions.conditions}`
     document.querySelector('.desc').innerHTML = `Description : ${data.description}`
 
-    // adding next day data
+    // adding next day data[ 15 days broadcast ]
     for (let i = data.days.length-1 ; i >=0; i--){
         let div = `<div class="next-day">
                     <div class="status">
@@ -48,14 +46,11 @@ let insertData = (data) => {
                     </div>
                     <p></p>
                 </div>`
-                // document.querySelector(".next-day-update").innerHTML += div
                 document.querySelector(".next-day-update .op").insertAdjacentHTML('afterend',div) 
                 document.querySelector(".next-date").innerHTML = data.days[i].datetime
                 document.querySelector(".next-date").innerHTML = data.days[i].datetime
                 document.querySelector(".next-condition").innerHTML = data.days[i].conditions
                 document.querySelector(".next-day p").innerHTML = data.days[i].description
-
-        getPopUp()
     }
 }
 
@@ -78,8 +73,11 @@ let getWeather = () => {
         insertData(data)
     }).catch(err => console.log(err))
 }
+
+// by default once getWeather function is called
 getWeather()
 
+// when ever the search button in clicked function is called
 search.addEventListener("click", getWeather)
 
 

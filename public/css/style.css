@@ -16,11 +16,14 @@
     --purple-shade:#01012d;
     --purple-shade-2:#010a52;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--main-bg-color);
     color:var(--color-white) ;
 }
+
+/* scrool bar */
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -117,6 +120,7 @@ main{
     font-size: 1.2rem;
     color: gray;
 }
+
 /* properties */
 .main-right{
     display: flex;
@@ -148,7 +152,7 @@ main{
     color: gray;
 }
 
-/* des section */
+/* desc section */
 .desc-section{
     background-color: var(--purple-shade);
     margin: 1rem;
@@ -159,6 +163,8 @@ main{
     margin: 5px;
     font-size: 1.2rem;
 }
+
+
 /* next day */
 .next-day-update{
     height: 500px;
@@ -193,6 +199,7 @@ main{
     color: grey;
 }
 
+/* resposive code */
 @media (max-width:1230px) {
     .next-day .status{
         flex-direction: column;
